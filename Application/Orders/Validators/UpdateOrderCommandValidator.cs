@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Orders.Validators
 {
-    internal class UpdateOrderCommandValidator
+    public class UpdateOrderCommandValidator
     {
     }
 }

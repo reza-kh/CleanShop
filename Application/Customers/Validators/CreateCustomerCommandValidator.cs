@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Customers.Validators;
 
-internal class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
+public class CreateCustomerCommandValidator : AbstractValidator<CreateCustomerCommand>
 {
     public CreateCustomerCommandValidator()
     {
