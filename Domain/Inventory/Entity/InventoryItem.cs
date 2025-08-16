@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Products.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ public sealed class InventoryItem:BaseEntity
 {
     public Guid ProductId { get; }
     public int Quantity { get; private set; }
+    public Product Product { get; private set; }
 
     public InventoryItem() : base()
     {

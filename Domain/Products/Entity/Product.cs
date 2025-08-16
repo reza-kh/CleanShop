@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Inventory.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ public sealed class Product : BaseEntity
 {
     public string Name { get; }
     public decimal Price { get; private set; }
+    public InventoryItem InventoryItem { get; private set; }
     public Product() : base()
     {
     }

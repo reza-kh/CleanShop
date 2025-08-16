@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Customers.Entity;
 using Domain.Orders.Enum;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Domain.Orders.Entity;
 public sealed class Order : BaseEntity
 {
     public Guid CustomerId { get; }
+    public Customer Customer { get; private set; }
     public OrderStatus Status { get; private set; }
 
     public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
