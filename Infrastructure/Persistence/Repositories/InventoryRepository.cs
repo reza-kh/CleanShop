@@ -36,7 +36,7 @@ namespace Infrastructure.Persistence.Repositories
 
         public async Task<InventoryItem?> GetByProductIdAsync(Guid productId, CancellationToken cancellationToken)
         {
-            return await _context.InventoryItems.AsNoTracking().FirstOrDefaultAsync(i => i.ProductId == productId, cancellationToken);
+            return await _context.InventoryItems.FirstOrDefaultAsync(i => i.ProductId == productId, cancellationToken);
         }
     }
 }

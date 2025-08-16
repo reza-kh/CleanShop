@@ -31,6 +31,6 @@ public class CustomerRepository : ICustomerRepository
 
     public async Task<Customer?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        return await _context.Customers.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+        return await _context.Customers.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
     }
 }

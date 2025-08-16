@@ -32,6 +32,6 @@ internal class ProductRepository : IProductRepository
 
     public async Task<Product?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        return await _context.Products.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+        return await _context.Products.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
     }
 }

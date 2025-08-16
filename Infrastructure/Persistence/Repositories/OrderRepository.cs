@@ -29,8 +29,7 @@ namespace Infrastructure.Persistence.Repositories
         public async Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             return await _context.Orders
-                .AsNoTracking()
-                .Include(o => o.Items) // بارگذاری آیتم‌ها
+                .Include(o => o.Items)
                 .FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
         }
 
