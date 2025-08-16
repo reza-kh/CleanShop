@@ -41,7 +41,8 @@ namespace Domain.Orders.Entity
         public void RemoveItem(int quantity)
         {
             Guard.AgainstOutOfRange(quantity, 1, nameof(quantity));
-            Quantity += quantity;
+            Quantity -= quantity;
+
             SetLastModified(CreatorUserId);
         }
     }
