@@ -2,6 +2,7 @@
 using Application.Customers.Queries.GetAllCustomers;
 using Application.Customers.Queries.GetCustomerById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace Api.Controllers
         {
             _mediator = mediator;
         }
-
+        [Authorize]
         // GET: api/customers
         [HttpGet]
         public async Task<IActionResult> GetAll()
