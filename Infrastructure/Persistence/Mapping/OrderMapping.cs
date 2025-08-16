@@ -40,6 +40,14 @@ namespace Infrastructure.Persistence.Mapping
                 item.Property<Guid>("Id");
                 item.HasKey("Id");
 
+                builder.Property(c => c.CreatorUserId)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
+                builder.Property(c => c.LastModifiedUserId)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
                 item.Property(i => i.ProductId).IsRequired();
                 item.Property(i => i.Quantity).IsRequired();
                 item.Property(i => i.UnitPrice)
