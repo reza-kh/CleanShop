@@ -67,7 +67,7 @@ namespace Api.Controllers
         }
 
         // PUT: api/orders/update-status
-        [HttpPut("update-status")]
+        [HttpPost("update-status")]
         public async Task<IActionResult> UpdateStatus([FromBody] AdvanceOrderStatusCommand command)
         {
             await _mediator.Send(command);

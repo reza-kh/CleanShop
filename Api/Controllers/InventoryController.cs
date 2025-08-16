@@ -28,7 +28,7 @@ namespace Api.Controllers
         }
 
         // GET: api/inventory/{productId}
-        [HttpGet("{id:guid}")]
+        [HttpGet("{productId:guid}")]
         public async Task<IActionResult> GetById(Guid productId)
         {
             var query = new GetInventoryByProductQuery() { ProductId=productId};
