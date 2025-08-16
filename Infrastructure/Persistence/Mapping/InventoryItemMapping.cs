@@ -19,7 +19,7 @@ namespace Infrastructure.Persistence.Mapping
                 .IsRequired();
 
             builder.HasOne(i => i.Product)
-                .WithOne()
+                .WithOne(p => p.InventoryItem)
                 .HasForeignKey<InventoryItem>(i => i.ProductId)
                 .OnDelete(DeleteBehavior.Cascade);
         }

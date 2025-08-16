@@ -23,10 +23,5 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
         builder.Property(p => p.Price)
             .HasPrecision(18, 2)
             .IsRequired();
-
-        builder.HasOne(i => i.InventoryItem)
-            .WithOne()
-            .HasForeignKey<InventoryItem>(i => i.ProductId)
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }
