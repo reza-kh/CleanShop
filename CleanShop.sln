@@ -1,21 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{8DE3137F-9B86-446D-A180-56F7FDA8EAB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{8DE3137F-9B86-446D-A180-56F7FDA8EAB9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44B44540-7777-4CA4-9E76-E788EA8D8F93} = {44B44540-7777-4CA4-9E76-E788EA8D8F93}
+		{4B325B4A-E16B-4E47-AC01-7E151FFD640F} = {4B325B4A-E16B-4E47-AC01-7E151FFD640F}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{B74099C3-28A2-4A61-BA1B-1AB6D48D89B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{B74099C3-28A2-4A61-BA1B-1AB6D48D89B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3C6AFE78-A059-445D-866B-C541B4D93DDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{663E8952-BBAA-47E3-9DA4-9C7AFC60C088}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{4B325B4A-E16B-4E47-AC01-7E151FFD640F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{4B325B4A-E16B-4E47-AC01-7E151FFD640F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{44B44540-7777-4CA4-9E76-E788EA8D8F93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{44B44540-7777-4CA4-9E76-E788EA8D8F93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0C5F77D0-7134-473C-B781-D1701EE278DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{0C5F77D0-7134-473C-B781-D1701EE278DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,5 +57,8 @@ Global
 		{4B325B4A-E16B-4E47-AC01-7E151FFD640F} = {3C6AFE78-A059-445D-866B-C541B4D93DDF}
 		{44B44540-7777-4CA4-9E76-E788EA8D8F93} = {3C6AFE78-A059-445D-866B-C541B4D93DDF}
 		{0C5F77D0-7134-473C-B781-D1701EE278DC} = {663E8952-BBAA-47E3-9DA4-9C7AFC60C088}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {557BD7BC-EF77-4D92-A363-A819C4228B56}
 	EndGlobalSection
 EndGlobal
