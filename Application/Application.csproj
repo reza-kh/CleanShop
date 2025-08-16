@@ -16,10 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InventoryItem\Commands\IncreaseInventoryItem\" />
-    <Folder Include="InventoryItem\Commands\DecreaseInventoryItem\" />
-    <Folder Include="InventoryItem\DTOs\" />
-    <Folder Include="InventoryItem\Queries\" />
+    <Folder Include="Inventory\Commands\IncreaseInventoryItem\" />
+    <Folder Include="Inventory\Commands\DecreaseInventoryItem\" />
   </ItemGroup>
 
 </Project>

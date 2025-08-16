@@ -11,6 +11,7 @@ namespace Application.Interfaces;
 public interface IInventoryRepository
 {
     Task<InventoryItem?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
+    Task<InventoryItem?> GetByProductIdAsync(Guid productId, CancellationToken cancellationToken);
     Task AddAsync(InventoryItem inventory, CancellationToken cancellationToken = default);
     Task<List<InventoryItem>> GetAllAsync(CancellationToken cancellationToken = default);
 }
