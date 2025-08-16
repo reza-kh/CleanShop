@@ -24,7 +24,6 @@ public class CustomerMapping : IEntityTypeConfiguration<Customer>
                 .HasMaxLength(200);
 
         builder.Property(c => c.LastModifiedUserId)
-                .IsRequired()
                 .HasMaxLength(200);
 
         builder.Property(c => c.Email)

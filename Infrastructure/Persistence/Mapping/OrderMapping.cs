@@ -26,7 +26,6 @@ namespace Infrastructure.Persistence.Mapping
                 .HasMaxLength(200);
 
             builder.Property(c => c.LastModifiedUserId)
-                .IsRequired()
                 .HasMaxLength(200);
 
             builder.HasOne(o => o.Customer)
@@ -45,7 +44,6 @@ namespace Infrastructure.Persistence.Mapping
                     .HasMaxLength(200);
 
                 item.Property(c => c.LastModifiedUserId)
-                    .IsRequired()
                     .HasMaxLength(200);
 
                 item.Property(i => i.ProductId).IsRequired();

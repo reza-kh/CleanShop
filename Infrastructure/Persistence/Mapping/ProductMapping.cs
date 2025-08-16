@@ -25,7 +25,6 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
             .HasMaxLength(200);
 
         builder.Property(c => c.LastModifiedUserId)
-            .IsRequired()
             .HasMaxLength(200);
 
         builder.Property(p => p.Price)
