@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Inventory.Entity;
-public sealed class InventoryItem
+public sealed class InventoryItem:BaseEntity
 {
     public Guid ProductId { get; }
     public int Quantity { get; private set; }
@@ -15,7 +15,7 @@ public sealed class InventoryItem
     {
     }
 
-    public InventoryItem(Guid productId, int quantity)
+    public InventoryItem(Guid productId, int quantity, string creatorUserId) : base(creatorUserId)
     {
         if (productId == Guid.Empty) throw new DomainException("ProductId is required.");
         if (quantity < 0) throw new DomainException("Quantity must be >= 0.");

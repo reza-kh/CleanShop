@@ -98,4 +98,7 @@ public sealed class Order : BaseEntity
             throw new DomainException("Order must have at least one item.");
     }
 
+    // TODO add remove item service
+
+
 }
