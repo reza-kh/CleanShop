@@ -20,6 +20,14 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
             .IsRequired()
             .HasMaxLength(150);
 
+        builder.Property(c => c.CreatorUserId)
+            .IsRequired()
+            .HasMaxLength(200);
+
+        builder.Property(c => c.LastModifiedUserId)
+            .IsRequired()
+            .HasMaxLength(200);
+
         builder.Property(p => p.Price)
             .HasPrecision(18, 2)
             .IsRequired();

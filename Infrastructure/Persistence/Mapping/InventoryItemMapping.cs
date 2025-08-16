@@ -18,6 +18,14 @@ namespace Infrastructure.Persistence.Mapping
             builder.Property(i => i.Quantity)
                 .IsRequired();
 
+            builder.Property(c => c.CreatorUserId)
+                .IsRequired()
+                .HasMaxLength(200);
+
+            builder.Property(c => c.LastModifiedUserId)
+                .IsRequired()
+                .HasMaxLength(200);
+
             builder.HasOne(i => i.Product)
                 .WithOne(p => p.InventoryItem)
                 .HasForeignKey<InventoryItem>(i => i.ProductId)

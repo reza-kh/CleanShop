@@ -19,8 +19,18 @@ public class CustomerMapping : IEntityTypeConfiguration<Customer>
             .IsRequired()
             .HasMaxLength(100);
 
+        builder.Property(c => c.CreatorUserId)
+                .IsRequired()
+                .HasMaxLength(200);
+
+        builder.Property(c => c.LastModifiedUserId)
+                .IsRequired()
+                .HasMaxLength(200);
+
         builder.Property(c => c.Email)
             .IsRequired()
             .HasMaxLength(200);
+
+
     }
 }

@@ -21,6 +21,14 @@ namespace Infrastructure.Persistence.Mapping
             builder.Property(o => o.CreationDate)
                 .IsRequired();
 
+            builder.Property(c => c.CreatorUserId)
+                .IsRequired()
+                .HasMaxLength(200);
+
+            builder.Property(c => c.LastModifiedUserId)
+                .IsRequired()
+                .HasMaxLength(200);
+
             builder.HasOne(o => o.Customer)
                 .WithMany()
                 .HasForeignKey(o => o.CustomerId)
