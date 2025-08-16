@@ -21,22 +21,22 @@ namespace Infrastructure.Persistence.Repositories
 
         public async Task AddAsync(InventoryItem entity, CancellationToken cancellationToken = default)
         {
-            await _context.Inventories.AddAsync(entity, cancellationToken);
+            await _context.InventoryItems.AddAsync(entity, cancellationToken);
         }
 
         public async Task<List<InventoryItem>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            return await _context.Inventories.AsNoTracking().ToListAsync(cancellationToken);
+            return await _context.InventoryItems.AsNoTracking().ToListAsync(cancellationToken);
         }
 
         public async Task<InventoryItem?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            return await _context.Inventories.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id, cancellationToken);
+            return await _context.InventoryItems.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id, cancellationToken);
         }
 
         public async Task<InventoryItem?> GetByProductIdAsync(Guid productId, CancellationToken cancellationToken)
         {
-            return await _context.Inventories.AsNoTracking().FirstOrDefaultAsync(i => i.ProductId == productId, cancellationToken);
+            return await _context.InventoryItems.AsNoTracking().FirstOrDefaultAsync(i => i.ProductId == productId, cancellationToken);
         }
     }
 }
