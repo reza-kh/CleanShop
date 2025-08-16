@@ -90,6 +90,15 @@ CleanShop is a modern e-commerce application built using .NET 8, Clean Architect
     Once the application is running, you can access the Swagger UI at:
     
     https://localhost:7194/swagger
+    
+Docker
+
+    You can run the CleanShop API using Docker. The application exposes both HTTP and HTTPS ports:
+    EXPOSE 5031
+    EXPOSE 7194
+    To build and run the Docker container:
+    docker build -t cleanshop-api .
+    docker run -d -p 5031:5031 -p 7194:7194 cleanshop-api
 
 
 Here, you can explore and test API endpoints interactively.
