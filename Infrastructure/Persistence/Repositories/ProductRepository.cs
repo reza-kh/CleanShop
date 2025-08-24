@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Domain.Customers.Entity;
+using Domain.Inventory.Entity;
 using Domain.Products.Entity;
 using Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -22,16 +23,16 @@ internal class ProductRepository : IProductRepository
 
     public async Task AddAsync(Product entity, CancellationToken cancellationToken = default)
     {
-        await _context.Products.AddAsync(entity, cancellationToken);
+        await _context.Set<Product>().AddAsync(entity, cancellationToken);
     }
 
     public async Task<List<Product>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _context.Products.AsNoTracking().ToListAsync(cancellationToken);
+        return await _context.Set<Product>().AsNoTracking().ToListAsync(cancellationToken);
     }
 
     public async Task<Product?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        return await _context.Products.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+        return await _context.Set<Product>().FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
     }
 }
