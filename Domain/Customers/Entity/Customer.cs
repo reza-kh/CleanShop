@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Customers.Entity;
 
-public sealed class Customer : BaseEntity
+public sealed class Customer : BaseEntity,IEntity
 {
     public string FullName { get; }
     public string Email { get; }

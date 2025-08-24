@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Orders.Entity;
 
-public sealed class Order : BaseEntity
+public sealed class Order : BaseEntity, IEntity
 {
     public Guid CustomerId { get; }
     public Customer Customer { get; private set; }

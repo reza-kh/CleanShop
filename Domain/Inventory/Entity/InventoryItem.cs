@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Inventory.Entity;
-public sealed class InventoryItem:BaseEntity
+public sealed class InventoryItem:BaseEntity, IEntity
 {
     public Guid ProductId { get; }
     public int Quantity { get; private set; }
