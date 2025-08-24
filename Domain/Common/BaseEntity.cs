@@ -9,7 +9,7 @@ namespace Domain.Common;
 
 public class BaseEntity
 {
-    public Guid Id { get; private set; }
+    public Guid Id { get; set; }
     public DateTime CreationDate { get; private set; } = DateTime.UtcNow;
     public string CreatorUserId { get; private set; }
 
