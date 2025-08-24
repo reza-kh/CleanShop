@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Domain.Orders.Entity;
 using Domain.Orders.Enum;
+using Domain.Products.Entity;
 using Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,12 +24,12 @@ namespace Infrastructure.Persistence.Repositories
 
         public async Task AddAsync(Order entity, CancellationToken cancellationToken = default)
         {
-            await _context.Orders.AddAsync(entity, cancellationToken);
+            await _context.Set<Order>().AddAsync(entity, cancellationToken);
         }
 
         public async Task<Order?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            return await _context.Orders
+            return await _context.Set<Order>()
                 .Include(o => o.Items)
                 .FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
         }
@@ -42,7 +43,7 @@ namespace Infrastructure.Persistence.Repositories
             int pageSize,
             CancellationToken cancellationToken)
         {
-            var query = _context.Orders
+            var query = _context.Set<Order>()
                 .AsNoTracking()
                 .Include(o => o.Items)
                 .AsQueryable();
